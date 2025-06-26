@@ -77,7 +77,8 @@ button{
     height: 70px;
     text-align: center;
     border-radius: 5px;
-    background-color: #294b8b;
+    /* background-color: #294b8b; */
+    background-color: #2c8b29;
     color: wheat;
     font-size: 16px;
     outline: #212121 solid 2px;
