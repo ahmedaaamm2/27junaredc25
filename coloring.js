@@ -11,7 +11,7 @@ export function colorizeTable() {
         
     
         if (value === 'Vacant') {
-            cell.style.outline = '2px solid green'
+            cell.style.outline = '1px solid green'
             cell.style.borderRadius = '15px'
             cell.style.width = '90px'
             cell.style.paddingRight = '10px'

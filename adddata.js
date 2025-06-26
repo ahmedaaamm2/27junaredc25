@@ -8,9 +8,9 @@ export function adddataButton(){
     const btn = document.createElement('button');
     btn.id = 'idcollectData'
     btn.textContent = 'Add'
-    btn.style.height = '20px'
+    btn.style.height = '30px'
     btn.style.width = '15%'
-    btn.style.backgroundColor = 'Brown'
+    btn.style.backgroundColor = 'silver'
     btn.style.margin = 'auto'
     btn.style.borderRadius = '10px'
     btn.style.fontSize = '12px'
@@ -18,8 +18,8 @@ export function adddataButton(){
 
     btn.addEventListener('click', () => {
     let div = document.getElementById('idnewDataDiv');
-    let div111 = document.getElementById('idinnewDataDiv111')
-    let div222 = document.getElementById('idinnewDataDiv222')
+    let div111 = document.getElementById('newDataDivDown')
+    let div222 = document.getElementById('newDataDivUp')
 
     if (div) {
     div.remove();
@@ -30,22 +30,12 @@ export function adddataButton(){
     }
     });
 
-//   btn.onclick = collectData
-//   return btn;
 }
 adddataButton() 
 
 //////////////////////////////////////////////////////////////////////////
 
 export function collectData(){
-
-    // if(document.contains(document.getElementById('idnewDataDiv'))){ ///// prevent doublicate when add unit button is clicked
-    // document.getElementById('idnewDataDiv').remove()
-    // }
-
-    // if(document.contains(document.getElementById('idnewDiv'))){ 
-    // document.getElementById('idnewDiv').remove()
-    // }
 
     console.log('collectData is woring ')
     let bedsss = ['1 bhk', '2 bhk', '3 bhk', '4 bhk', '5 bhk' ]
@@ -54,29 +44,24 @@ export function collectData(){
     newDataDiv.style.display = 'flex'
     newDataDiv.style.flexDirection = 'column'
     newDataDiv.style.alignItems = 'center'
-    newDataDiv.style.height = '280px'
+    newDataDiv.style.height = '600px'
     newDataDiv.style.width = '100%'
     newDataDiv.style.outline = '1px gray solid'
     newDataDiv.style.borderRadius = '10px'
     newDataDiv.style.padding = '10px'
-    newDataDiv.style.gap = '5px'
+    newDataDiv.style.gap = '10px'
 
 
     let newDataDiv111 = document.createElement('div');
     let newDataDiv222 = document.createElement('div');
 
-    newDataDiv111.id = 'idinnewDataDiv111'
-    newDataDiv222.id = 'idinnewDataDiv222'
+    newDataDiv111.id = 'newDataDivDown'
+    newDataDiv222.id = 'newDataDivUp'
 
     bedsss.forEach((name, index) => {
         const buttons = document.createElement('button');
         buttons.textContent = name
-        buttons.className = 'addDataClase1'
-        buttons.style.backgroundColor = btncolor
-        buttons.style.height = '90%'
-        buttons.style.borderRadius = '10px'
-        buttons.style.fontSize = '13px'
-
+        buttons.className = 'adddatachosebtn'
         buttons.addEventListener('click', () => {
         collectedData.push(name) 
         document.getElementById('idnewDataDiv').innerHTML = ''    
@@ -101,8 +86,8 @@ export function addArea(){
     let newDataDiv111 = document.createElement('div');
     let newDataDiv222 = document.createElement('div');
 
-    newDataDiv111.id = 'idinnewDataDiv111'
-    newDataDiv222.id = 'idinnewDataDiv222'
+    newDataDiv111.id = 'newDataDivDown'
+    newDataDiv222.id = 'newDataDivUp'
 
     let newDataDiv = document.getElementById('idnewDataDiv')
 
@@ -111,11 +96,7 @@ export function addArea(){
     areass.forEach((name, index) => {
         const buttons = document.createElement('button');
         buttons.textContent = name
-        buttons.style.backgroundColor = btncolor
-        buttons.style.height = '35px'
-        buttons.style.borderRadius = '10px'
-        buttons.style.fontSize = '13px'
-
+        buttons.className = 'adddatachosebtn'
         buttons.addEventListener('click', () => {
             collectedData.push(name) 
             document.getElementById('idnewDataDiv').innerHTML = ''      
@@ -138,18 +119,15 @@ export function addPrices(){
     let newDataDiv111 = document.createElement('div');
     let newDataDiv222 = document.createElement('div');
 
-    newDataDiv111.id = 'idinnewDataDiv111'
-    newDataDiv222.id = 'idinnewDataDiv222'
+    newDataDiv111.id = 'newDataDivDown'
+    newDataDiv222.id = 'newDataDivUp'
 
     let newDataDiv = document.getElementById('idnewDataDiv')
 
     prices.forEach((name, index) => {
         const buttons = document.createElement('button');
         buttons.textContent = name
-        buttons.style.backgroundColor = btncolor
-        buttons.style.height = '35px'
-        buttons.style.borderRadius = '10px'
-        buttons.style.fontSize = '13px'
+        buttons.className = 'adddatachosebtn'
 
         buttons.addEventListener('click', () => {
         collectedData.push(name) 
@@ -171,45 +149,37 @@ export function showCollectedData(){
     let newDataDiv111 = document.createElement('div');
     let newDataDiv222 = document.createElement('div');
 
-    newDataDiv111.id = 'idinnewDataDiv111'
-    newDataDiv222.id = 'idinnewDataDiv222'
+    newDataDiv111.id = 'newDataDivDown'
+    newDataDiv222.id = 'newDataDivUp'
 
     let newDataDiv = document.getElementById('idnewDataDiv')
 
     collectedData.forEach((name, index) => {
         const buttons = document.createElement('button');
         buttons.textContent = name
-        buttons.style.backgroundColor = btncolor
-        buttons.style.height = '35px'
-        buttons.style.width = '50%'
-        buttons.style.borderRadius = '10px'
-        buttons.style.fontSize = '13px'
+        buttons.className = 'adddatachosebtn'
         newDataDiv222.append(buttons)     
     })
 
     const button = document.createElement('button');
     button.textContent = 'Send Data'
-    button.style.backgroundColor = 'brown'
-    button.style.height = '35px'
-    button.style.width = '50%'
-    button.style.margin = 'auto'
-    button.style.borderRadius = '10px'
-    button.style.fontSize = '13px'
+    button.style.color = 'green'
+    button.style.outline = '1px solid green'
+
+    button.className = 'adddatachosebtn'
     newDataDiv111.append(button)
 
     button.addEventListener('click', () => {
         newDataDiv.innerHTML = `<p id='p'>Data has been sent sucsessfuly</p>`
-        // newDataDiv.style.alignItems = 'center'
         newDataDiv.style.justifyContent = 'center'
-        // newDataDiv.alignItems = 'center '
         document.getElementById('p').style.color = 'green'
         document.getElementById('p').style.fontSize = '20px'
 
-
         setTimeout(function() {
             if (newDataDiv) {
-            newDataDiv.remove();
-            }}, 1000); // 3000 milliseconds = 3 seconds
+                newDataDiv.remove();
+                newDataDiv.innerHTML = ``    
+            }}, 1000);    
     });
 
     const xx = [newDataDiv222, newDataDiv111]
@@ -217,29 +187,30 @@ export function showCollectedData(){
 
     collectedData.length = 0
 }
+
 //////////////////////////////////////////////////////////////////////////
 function showBtn(){
     collectedData.forEach((i, index) => {
         const button = document.createElement('button');
         button.textContent = i
-        button.style.backgroundColor = btncolor
-        button.style.height = '90%'
-        button.style.width = '20%'
-        button.style.borderRadius = '10px'
-        button.style.fontSize = '13px'
-    document.getElementById('idinnewDataDiv222').append(button)})
+        button.className = 'adddatachosebtn'
+        // button.style.backgroundColor = btncolor
+        // button.style.height = '90%'
+        // button.style.width = '20%'
+        // button.style.borderRadius = '10px'
+        // button.style.fontSize = '13px'
+    document.getElementById('newDataDivUp').append(button)})
 }
 
 //////////////////////////////////////////////////////////////////////////
-
 
 export function pfButton(){
   const btn = document.createElement('button');
   btn.id = 'idcollectData'
   btn.textContent = 'My Ads'
-  btn.style.height = '20px'
+  btn.style.height = '30px'
   btn.style.width = '15%'
-  btn.style.backgroundColor = 'Brown'
+  btn.style.backgroundColor = 'silver'
   btn.style.margin = 'auto'
   btn.style.borderRadius = '10px'
   btn.style.fontSize = '12px'

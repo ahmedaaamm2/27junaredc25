@@ -78,7 +78,7 @@ button{
     text-align: center;
     border-radius: 5px;
     /* background-color: #294b8b; */
-    background-color: #2c8b29;
+    /* background-color: #2c8b29; */
     color: wheat;
     font-size: 16px;
     outline: #212121 solid 2px;
@@ -90,28 +90,45 @@ input:focus{
     border: var(--border-focus-line);
 }  
 
-#idinnewDataDiv111{
+#newDataDivUp{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    min-height:30px;
+    width: 50%;
+    gap: 10px;
+    padding: 10px ;
+    border-radius: 15px;
+    background-color: #ffffff;
+    outline: 1px solid gray;
+}
+
+#newDataDivDown{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 250px;
+    align-items: center;
+    height: fit-content;
+    min-height:330px;
     width: 50%;
     gap: 5px;
     padding: 10px ;
     border-radius: 15px;
-    background-color: #b8b1b1;
+    background-color: #ffffff;
+    outline: 1px solid gray;
 }
 
-#idinnewDataDiv222{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 50px;
+.adddatachosebtn{
     width: 50%;
-    gap: .2em;
-    padding: 10px ;
-    border-radius: 15px;
-    background-color: #b8b1b1;
+    height: 45px;
+    border-radius: 7px;
+    outline: 1px solid green ;
+    border: none;
+    font-weight: bold;
+    background-color: #fffefe; 
+    font-size: 16px;
 }
 
 .detailsDivs{
@@ -154,30 +171,44 @@ table{
 
 th{
     height: 50px;
-    background-color: #294b8b;
-    color: gold;
+    /* background-color: #2c8b29; */
+
 }
-.rows{border-radius: 10px;}
+
+th, .head{
+    background-color: #e6cc3d;  
+    color: #000000;
+}
+
+.tdrows{border-radius: 10px;
+    
+}
+
+.throws{border-radius: 10px;
+    outline: #000000 1px solid;
+    box-shadow: 3px 3px 3px 3px #1a1919;
+}
+
 
 td{
     height: 20px;
     /* margin: 10px; */
-    padding: 0 10px;
+    padding: 0 15px;
     /* border-spacing: 30px; */
-    
 }
 
 #idgetDetails{
     border-radius: 7px;
-    outline: 2px solid #000000;
+    /* outline: 2px solid #000000; */
     border: none;
     margin-right: 20px;
     /* font-weight: bold; */
     /* background-color: #fffbfb; */
+    background-color: silver;
     background-color: none;
     /* color: #e8bb67; */
     font-size: 16px;
-    /* box-shadow: 5px 5px 5px 5px #1a1919; */
+    box-shadow: 5px 5px 5px 5px #1a1919;
     height: 40px;
 }
 

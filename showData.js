@@ -15,7 +15,7 @@ export function showData(){
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
     table.id = 'table'
-    headerRow.className = 'rows'
+    headerRow.className = 'throws'
     SaleHeaders
     SaleHeaders.forEach(headerText => {
         const th = document.createElement('th');
@@ -41,7 +41,7 @@ export function showSpesific(){
     for(let i = 0; i < data.length; i++){ 
         console.log(data[i])
         someColumns += `
-            <tr class='rows'>
+            <tr class='tdrows'>
                 <td>${i}</td>
                 <td>${data[i].Type}</td>
                 <td>${data[i].AdsType}</td>
