@@ -74,7 +74,7 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70px;
+    height: 80px;
     text-align: center;
     border-radius: 5px;
     /* background-color: #294b8b; */
@@ -176,7 +176,7 @@ th{
 }
 
 th, .head{
-    background-color: #e6cc3d;  
+    background-color: #36804d;  
     color: #000000;
 }
 
