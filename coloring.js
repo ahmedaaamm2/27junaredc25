@@ -4,7 +4,7 @@ export function colorizeTable() {
     
     for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
-        const cell = row.cells[11];
+        const cell = row.cells[8];
         // console.log(row.cells[9])
         const value = cell.textContent.trim();
         // row.style.backgroundColor = '#e7e8e3'

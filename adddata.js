@@ -254,8 +254,17 @@ export function pfDiv(){
     iframe.src = 'https://www.propertyfinder.qa/en/agent/ahmed-abdelkader-2805';
     newDataDiv.append(iframe)
 
-    document.getElementById('idfiguersDiv').after(newDataDiv)
+    document.getElementById('search').after(newDataDiv)
 
 }
 
 
+document.getElementById('search').addEventListener('keyup', function() {
+const div = document.getElementById('idpfDiv');
+if (div) {div.remove()} 
+})
+
+document.getElementById('search').addEventListener('keyup', function() {
+const div = document.getElementById('idnewDataDiv');
+if (div) {div.remove()} 
+})

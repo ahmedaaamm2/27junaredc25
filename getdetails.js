@@ -1,6 +1,7 @@
 // import {userss} from './database.js'
 
 import { data } from './database.js';
+
 // import {getVedio} from './main.js'
 // import {getLocation} from './main.js'
 
@@ -40,6 +41,7 @@ export function getDetails(i){
   newDiv.style.backgroundColor = '#000000';
   newDiv.style.borderRadius = '10px';
   newDiv.style.margin = '2px';
+  newDiv.style.marginTop = '15px';
 
 
   const divInOne = document.createElement('div');

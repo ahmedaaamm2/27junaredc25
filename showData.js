@@ -1,14 +1,8 @@
 import { data } from "./database.js";
-import { getDetails } from "./getdetails.js";
-
-const SaleHeaders = ['id', 'Type', 'AdsType', 'SaleOr', 'Area', 'Activites', 'SQM', 'Price', 'Per', 'Name',  'Mobile', 'Status', 'Details'];
-// const RentHeaders = ['id', 'Type', 'AdsType',	'SaleOr', 'Area', 'Activites', 'LandSQM', 'Price', 'Per', 'Status', 'Details'];
-// const DetailsHeaders = ['id', 'Type', 'AdsType',	'SaleOr', 'Area', 'Activites', 'LandSQM', 'Price', 'Per', 'Status', 'Details'];
-// const AgentHeaders = ['id', 'Type', 'AdsType',	'SaleOr', 'Area', 'Activites', 'LandSQM', 'Price', 'Per', 'Status', 'Details'];
-// const TopAgentHeaders = ['id', 'Type', 'AdsType',	'SaleOr', 'Area', 'Activites', 'LandSQM', 'Price', 'Per', 'Status', 'Details'];
 
 
-const fullHeader =  ['Source','Date','Description','Type','AdsType','SaleOr','Area','Activites','SQM','Price','Per','Status','Sub_Type','BHK','Count','SQM','Income','Age','Remarks','View','Mobile','Name','AgentType','Company','commsion','Deal_Rate','Agent']
+const aredcBookingShort = ['Num', 'Area', 'Propert yName','Property Type','Bedrooms','Furniture','Price','Unit Number','Status','Details',]
+
 
 export function showData(){
     const table = document.createElement('table');
@@ -16,8 +10,8 @@ export function showData(){
     const headerRow = document.createElement('tr');
     table.id = 'table'
     headerRow.className = 'throws'
-    SaleHeaders
-    SaleHeaders.forEach(headerText => {
+    aredcBookingShort
+    aredcBookingShort.forEach(headerText => {
         const th = document.createElement('th');
         th.textContent = headerText;
         headerRow.appendChild(th);
@@ -29,6 +23,7 @@ export function showData(){
     const tbody = document.createElement('tbody');
     window.tbody = tbody
     tbody.id = 'tbody'
+    tbody.style.marginTop = '30px' 
     showSpesific()
     table.appendChild(tbody);
     document.getElementById("tableDiv").append(table)
@@ -43,16 +38,13 @@ export function showSpesific(){
         someColumns += `
             <tr class='tdrows'>
                 <td>${i}</td>
-                <td>${data[i].Type}</td>
-                <td>${data[i].AdsType}</td>
-                <td>${data[i].SaleOr}</td>
                 <td>${data[i].Area}</td>
-                <td>${data[i].Activites}</td>
-                <td>${data[i].SQM}</td>
+                <td>${data[i].PropertyName}</td>
+                <td>${data[i].PropertyType}</td>
+                <td>${data[i].Bedrooms}</td>
+                <td>${data[i].Furniture}</td>
                 <td>${data[i].Price}</td>
-                <td>${data[i].Per}</td>
-                <td>${data[i].AgentName}</td>
-                <td>${data[i].mobile}</td>
+                <td>${data[i].UnitNumber}</td>
                 <td>${data[i].Status}</td>
                 <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
             </tr>        
@@ -63,9 +55,6 @@ export function showSpesific(){
     tbody.innerHTML = someColumns;
 
 }
-
-
-
 
 
 
