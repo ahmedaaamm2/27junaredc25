@@ -131,7 +131,7 @@ export function leftDiv(){
 
 }
 
-leftDiv()
+// leftDiv()
 
 
 
@@ -179,7 +179,7 @@ export function rightDiv(){
 
 }
 
-rightDiv()
+// rightDiv()
 
 window.onload = leftDiv()
 window.onload  = rightDiv()
