@@ -19,7 +19,7 @@ pfDiv
 
 function figuers(){
   // const yy = document.getElementsById("idhead")
-  const aa = document.getElementById("search")
+  const search = document.getElementById("search")
   const  figuersDiv = document.createElement('div');
   figuersDiv.id = 'idfiguersDiv'
   figuersDiv.style.height = '25px'
@@ -40,16 +40,17 @@ function figuers(){
       buttons.style.height = '25px'
       buttons.style.borderRadius = '10px'
       buttons.style.fontSize = '13px'
+      buttons.style.marginTop = '5px'
       figuersDiv.append(buttons)
 
       buttons.addEventListener('click', () => {
       console.log(`${name} button was clicked!`);
       alert(`Hello, ${name}!`);
       });
-
   })
   // yy.before(figuersDiv)
-  aa.after(figuersDiv)
+  // const aa = document.getElementById("crud")
+  search.after(figuersDiv)
 }
 figuers()
 window.figuers = figuers
@@ -86,6 +87,99 @@ window.searchData = searchData
 window.onload = document.getElementById('search').focus();
 
 
+
+
+function leftDiv(){
+  // const yy = document.getElementsById("idhead")
+  // const search = document.getElementById("search")
+  const  figuersDiv = document.createElement('div');
+  figuersDiv.id = 'idfiguersDiv'
+  figuersDiv.style.display = 'flex'
+  figuersDiv.style.flexDirection = 'column'
+  figuersDiv.style.padding = '10px'
+  figuersDiv.style.height = 'fitcontent'
+  figuersDiv.style.width = '20%'
+  figuersDiv.style.border = '1px solid gray'
+  figuersDiv.style.display = 'flex'
+  figuersDiv.style.border = 'space-evenly'
+  figuersDiv.style.gap = '4px'
+    figuersDiv.style.outline = '1px solid black'
+  figuersDiv.style.borderRadius = '10px'
+  // figuersDiv.style.backgroundColor = 'green'
+
+  const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
+
+  btnFiguers.forEach((name, index) => {
+      const buttons = document.createElement('button');
+      buttons.textContent = name
+      buttons.style.backgroundColor = 'brown'
+      buttons.style.height = '30px'
+      buttons.style.borderRadius = '10px'
+      buttons.style.fontSize = '13px'
+      buttons.style.marginTop = '5px'
+      figuersDiv.append(buttons)
+
+      buttons.addEventListener('click', () => {
+      console.log(`${name} button was clicked!`);
+      alert(`Hello, ${name}!`);
+      });
+  })
+  // yy.before(figuersDiv)
+  const aa = document.getElementById("idmainPage")
+  // const aa = document.getElementsByName('body')
+  aa.before(figuersDiv)
+
+}
+
+leftDiv()
+
+
+
+function rightDiv(){
+  // const yy = document.getElementsById("idhead")
+  // const search = document.getElementById("search")
+  const  figuersDiv = document.createElement('div');
+  figuersDiv.id = 'idfiguersDiv'
+  figuersDiv.style.display = 'flex'
+  figuersDiv.style.flexDirection = 'column'
+  figuersDiv.style.padding = '10px'
+  figuersDiv.style.height = 'fitcontent'
+  figuersDiv.style.width = '20%'
+  figuersDiv.style.border = '1px solid gray'
+  figuersDiv.style.display = 'flex'
+  figuersDiv.style.border = 'space-evenly'
+  figuersDiv.style.gap = '4px'
+  figuersDiv.style.border = '4px'
+  figuersDiv.style.outline = '1px solid black'
+  figuersDiv.style.borderRadius = '10px'
+  // figuersDiv.style.backgroundColor = 'green'
+
+
+  const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
+
+  btnFiguers.forEach((name, index) => {
+      const buttons = document.createElement('button');
+      buttons.textContent = name
+      buttons.style.backgroundColor = 'graay'
+      buttons.style.height = '30px'
+      buttons.style.borderRadius = '10px'
+      buttons.style.fontSize = '13px'
+      buttons.style.marginTop = '5px'
+      figuersDiv.append(buttons)
+
+      buttons.addEventListener('click', () => {
+      console.log(`${name} button was clicked!`);
+      alert(`Hello, ${name}!`);
+      });
+  })
+  // yy.before(figuersDiv)
+  const aa = document.getElementById("idmainPage")
+  // const aa = document.getElementsByName('body')
+  aa.after(figuersDiv)
+
+}
+
+rightDiv()
 
 // use to start 
 // window.onload = document.getElementById('search').value = ''

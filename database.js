@@ -11,6 +11,18 @@
 
 
 
+///////////////////////////////////////////////////////////////
+/////////////////////// Headers ///////////////////////////////
+
+//  const aredcHeader = ['Area','PropertyName','PropertyType','UnitNumber','Bedrooms','View','Balcony-Size','Ferniture','BookingStatus','Price','OfferPrice','Agent','BookingDate','CheckOutDate','MaintainanceStatus','TimeFrame','Remarks']
+
+//  const generalHeader = ['ID','Source','Date','Description','AddType','Rent','Type','Area','Activiies','SubType','Price','Per','LandSQM','BHK','Count','BuiltinSQM','Income','Age','Mobile','Name','AdsOwner','Company','Remarks','View','Commsion','DealRate','Agent',]
+
+// const aredcArpHeader = ['SNo.','Property Name','Lease Type','Creation Date','Lease Number','Version No','Location Code','Base Rent','Gross Area','Net Area','Current Rent','Initial Lease Date','Lease Renewed Date','Lease End Date','Beginning RF Start Date','Beginning RF End Date','Ending RF Start Date','Ending RF End Date','Rent Start Date','Rent End Date','Check-In Date','Check-In Doc No','Check-Out Date','Check-Out Doc No','Delay in Check-Out (S-L)','Days Expired','Tenant Name','Tenant Code','Nationality','E-mail','Mobile Number','PO Box','QID No','Fax','No. of Bedrooms','Unit Classification','Kharama','Electricity','Water','Qatar Cool','Ooredoo','Lease Unit Status','Status Notice','Notice Reason','Created By','Lease Status','Paid Status',]
+
+
+///////////////////////////////////////////////////////////////
+
 
 
 

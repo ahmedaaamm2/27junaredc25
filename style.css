@@ -28,21 +28,22 @@
     background-color: #f44336;
 }
 body{
+    display: flex;
     background-color: #f3f3f3;
     margin: 0;
-    padding: 0px;
+    padding: 10px;
+    gap: 10px;
 }
 
-h2, p{
-    color: wheat;
+h2{
     font-size: 15px;
 }
 
 
-.crud{
+.mainPage{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     padding: 0.5em .3em;
     gap: .3em; 
     margin: auto;
@@ -72,7 +73,7 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80px;
+    height: 90px;
     text-align: center;
     border-radius: 5px;
     color: wheat;
@@ -167,29 +168,31 @@ table{
 
 th{
     height: 50px;
+    
     /* background-color: #2c8b29; */
 
 }
 
 th, .head{
-    background-color: #36804d;  
+    background-color: #ffdd6e;  
     color: #000000;
 }
 
-.tdrows{border-radius: 10px;
+.tdrows{
+    border-radius: 10px;
     
 }
 
 .throws{border-radius: 10px;
     outline: #000000 1px solid;
     box-shadow: 3px 3px 3px 3px #1a1919;
+    margin-top: 20px;
 }
 
 
 td{
     height: 20px;
-    /* margin: 10px; */
-    padding: 0 15px;
+    padding: 0 10px;
     /* border-spacing: 30px; */
 }
 
