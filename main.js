@@ -181,8 +181,8 @@ export function rightDiv(){
 
 rightDiv()
 
-window.onload = leftDiv
-window.onload  = rightDiv
+window.onload = leftDiv()
+window.onload  = rightDiv()
 
 // use to start 
 // window.onload = document.getElementById('search').value = ''
