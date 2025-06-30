@@ -89,7 +89,7 @@ window.onload = document.getElementById('search').focus();
 
 
 
-function leftDiv(){
+export function leftDiv(){
   // const yy = document.getElementsById("idhead")
   // const search = document.getElementById("search")
   const  figuersDiv = document.createElement('div');
@@ -135,7 +135,7 @@ leftDiv()
 
 
 
-function rightDiv(){
+export function rightDiv(){
   // const yy = document.getElementsById("idhead")
   // const search = document.getElementById("search")
   const  figuersDiv = document.createElement('div');
