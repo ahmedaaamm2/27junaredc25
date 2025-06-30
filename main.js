@@ -4,6 +4,8 @@ import { showData } from "./showData.js";
 import { colorizeTable } from "./coloring.js";
 import { data } from "./database.js";
 
+window.onload = leftDiv()
+window.onload  = rightDiv() 
 showData()
 colorizeTable()
 pfDiv
@@ -181,8 +183,7 @@ export function rightDiv(){
 
 // rightDiv()
 
-window.onload = leftDiv()
-window.onload  = rightDiv()
+
 
 // use to start 
 // window.onload = document.getElementById('search').value = ''
