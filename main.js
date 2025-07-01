@@ -32,7 +32,7 @@ function figuers(){
   figuersDiv.style.border = 'space-evenly'
   figuersDiv.style.gap = '4px'
   figuersDiv.style.padding = '0px 15px';
-  // figuersDiv.style.backgroundColor = 'gray'
+  figuersDiv.style.backgroundColor = 'brown'
 
   const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
 
@@ -51,9 +51,7 @@ function figuers(){
       alert(`Hello, ${name}!`);
       });
   })
-  // yy.before(figuersDiv)
-  // const aa = document.getElementById("crud")
-  search.after(figuersDiv)
+  document.getElementById("head1Div").before(figuersDiv)
 }
 figuers()
 window.figuers = figuers

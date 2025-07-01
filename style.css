@@ -43,9 +43,9 @@ h2{
 .mainPage{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
     padding: 0.5em .3em;
-    gap: .3em; 
+    /* gap: .3em;  */
     margin: auto;
 }  
 
@@ -71,14 +71,13 @@ button{
 
 .head{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
-    height: 90px;
+    height: 40px;
     text-align: center;
-    border-radius: 5px;
     color: wheat;
     font-size: 16px;
-    outline: #212121 solid 2px;
+    /* outline: #212121 solid 2px; */
 }
 
 input:focus{
@@ -86,7 +85,23 @@ input:focus{
     border: var(--border-focus-line);
 }  
 
-#newDataDivUp{
+
+#idaddDataContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    min-height:30px;
+    gap: 10px;
+    padding: 10px ;
+    border-radius: 15px;
+    background-color: #ffffff;
+    outline: 1px solid gray;
+}
+
+#idnewDataDivUp{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -97,11 +112,11 @@ input:focus{
     gap: 10px;
     padding: 10px ;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: #6d4545;
     outline: 1px solid gray;
 }
 
-#newDataDivDown{
+#idnewDataDivDown{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,9 +136,8 @@ input:focus{
     height: 45px;
     border-radius: 7px;
     outline: 1px solid green ;
-    border: none;
     font-weight: bold;
-    background-color: #fffefe; 
+    background-color: #ffffff; 
     font-size: 16px;
 }
 
