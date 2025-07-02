@@ -112,7 +112,7 @@ input:focus{
     gap: 10px;
     padding: 10px ;
     border-radius: 15px;
-    background-color: #6d4545;
+    background-color: #efebeb;
     outline: 1px solid gray;
 }
 
@@ -135,7 +135,7 @@ input:focus{
     width: 50%;
     height: 45px;
     border-radius: 7px;
-    outline: 1px solid green ;
+    outline: 1px solid rgb(105, 108, 105) ;
     font-weight: bold;
     background-color: #ffffff; 
     font-size: 16px;

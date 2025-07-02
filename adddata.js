@@ -66,17 +66,15 @@ export function collectData(){
         console.log('forEach is woring ')
         const buttons = document.createElement('button');
         buttons.textContent = name
-        buttons.style.className = 'adddatachosebtn'
+        buttons.className = 'adddatachosebtn'
 
         buttons.addEventListener('click', () => {
-        collectedData.push(name) 
-        document.getElementById('idnewDataDivUp').innerHTML = ''
-        document.getElementById('idnewDataDivUp').append(collectedData)
-        document.getElementById('idnewDataDivDown').innerHTML = ''       
-        addArea()
-        // showBtn()
+            collectedData.push(name) 
+            document.getElementById('idnewDataDivUp').innerHTML = ''
+            dataInDivUp()
+            document.getElementById('idnewDataDivDown').innerHTML = ''       
+            addArea()
         })
-
         document.getElementById('idnewDataDivDown').append(buttons)
 
     })
@@ -96,19 +94,14 @@ export function addArea(){
         document.getElementById('idnewDataDivDown').append(buttons)
 
         buttons.addEventListener('click', () => {
-        collectedData.push(name) 
-        document.getElementById('idnewDataDivUp').innerHTML = ''
-        document.getElementById('idnewDataDivUp').append(collectedData)
-        document.getElementById('idnewDataDivDown').innerHTML = ''       
-        addPrices()
-        // showBtn()
+            collectedData.push(name) 
+            document.getElementById('idnewDataDivUp').innerHTML = ''
+            dataInDivUp()
+            document.getElementById('idnewDataDivDown').innerHTML = ''       
+            addPrices()
         })
-
         document.getElementById('idnewDataDivDown').append(buttons)
-
     })
-
-    
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -123,18 +116,16 @@ export function addPrices(){
         buttons.className = 'adddatachosebtn'
 
         buttons.addEventListener('click', () => {
-        collectedData.push(name) 
-        document.getElementById('idnewDataDivUp').innerHTML = ''
-        document.getElementById('idnewDataDivUp').append(collectedData)
-        document.getElementById('idnewDataDivDown').innerHTML = ''       
-        showCollectedData()
-        // showBtn()
+            collectedData.push(name) 
+            document.getElementById('idnewDataDivUp').innerHTML = ''
+            dataInDivUp()
+            document.getElementById('idnewDataDivDown').innerHTML = ''       
+            showCollectedData()
         });
-
         document.getElementById('idnewDataDivDown').append(buttons)
     })
-    
 }
+
 
 //////////////////////////////////////////////////////////////////////////
 export function showCollectedData(){
@@ -160,8 +151,6 @@ export function showCollectedData(){
                 addDataContainer.innerHTML = ''   
                 addDataContainer.remove();
             }}, 2000);    
-
-            
     });
 
     collectedData.length = 0
@@ -169,8 +158,24 @@ export function showCollectedData(){
 
 
 
+export function dataInDivUp(){
+    collectedData.forEach((btnName, index) => {
+        const buttons = document.createElement('button');
+        buttons.textContent = btnName
+        buttons.style.height = '100%';
+        buttons.style.width = '15%'
+        buttons.style.padding = '10px'
+        buttons.style.outline = '1px solid black' 
+        buttons.style.borderRadius = '10px'
+        document.getElementById('idnewDataDivUp').append(buttons)
+
+    })
+    
+}
 
 
+////////////////////////////////////////////////////////////////////////////
+//////////////////////////   Property Finder  ///////////////////////////// 
 //////////////////////////////////////////////////////////////////////////
 
 export function pfButton(){
@@ -195,7 +200,7 @@ export function pfButton(){
     } else {
         pfDiv()
     }
-});
+    });
 
   return btn;
 }
