@@ -15,14 +15,11 @@ getDetails
 
 
 //////////////////////////////////////////////////////////////////////////
-
-
-
+//////////////////////         Figures           ///////////////////////            
 //////////////////////////////////////////////////////////////////////////
 
+
 function figuers(){
-  // const yy = document.getElementsById("idhead")
-  const search = document.getElementById("search")
   const  figuersDiv = document.createElement('div');
   figuersDiv.id = 'idfiguersDiv'
   figuersDiv.style.height = '40px'
@@ -33,6 +30,28 @@ function figuers(){
   figuersDiv.style.gap = '4px'
   figuersDiv.style.padding = '0px 15px';
   figuersDiv.style.backgroundColor = 'brown'
+
+  // const table = document.getElementById("tbody")
+  // for(let i = 0; i < table.rows.length; i++){
+  // console.log('total units' + table.length)
+  //   console.log('total vacant' + data [8].includes('Vacant').length)
+
+  // } 
+
+  const table = document.getElementById("tbody");
+  // const searchValue = "Vacant";
+
+  // Get all cells (td elements) in the table
+  const cells = table.querySelectorAll("td");
+
+  cells.forEach(cell => {
+    if (cell.textContent.mainString.includes('Vacant')) {
+      console.log(cell.textContent.mainString.includes('Vacant').length)
+    }
+  });
+
+  // console.log(`Number of times '${searchValue}' appears in data cells:`, countOfValue);
+
 
   const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'All 100']
 
@@ -47,45 +66,74 @@ function figuers(){
       figuersDiv.append(buttons)
 
   buttons.addEventListener('click', () => {
-    let someColumns = '';
-    for(let i = 0; i < data.length; i++){    
-      if(data[i].Status.includes(name[0]+name[1]) ) 
-        {
-        someColumns += `
-          <tr class='tdrows'>
-            <td>${i}</td>
-            <td>${data[i].Area}</td>
-            <td>${data[i].PropertyName}</td>
-            <td>${data[i].PropertyType}</td>
-            <td>${data[i].Bedrooms}</td>
-            <td>${data[i].Furniture}</td>
-            <td>${data[i].Price}</td>
-            <td>${data[i].UnitNumber}</td>
-            <td>${data[i].Status}</td>
-            <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
-          </tr>        
-          `
-    }
-  
-  }
-    
-    document.getElementById('tbody').innerHTML = someColumns;
-        
-
-  })
-
-colorizeTable()
-  
+    onFiguresClick(name)
 })
 
 
 document.getElementById('search').after(figuersDiv)
-}      
-
+})}      
 
 figuers()
 window.figuers = figuers
 
+
+
+
+function onFiguresClick(name){
+
+  let someColumns = '';
+  for(let i = 0; i < data.length; i++){       
+    if(data[i].Status.includes(name[0]+name[1]+name[2])) {
+      someColumns += `
+        <tr class='tdrows'>
+          <td>${i}</td>
+          <td>${data[i].Area}</td>
+          <td>${data[i].PropertyName}</td>
+          <td>${data[i].PropertyType}</td>
+          <td>${data[i].Bedrooms}</td>
+          <td>${data[i].Furniture}</td>
+          <td>${data[i].Price}</td>
+          <td>${data[i].UnitNumber}</td>
+          <td>${data[i].Status}</td>
+          <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
+        </tr>        
+        `
+      }
+    }
+    
+  
+  // for(let i = 0; i < data.length; i++){   
+
+    if(name.includes('All')) {
+      console.log('includ All')
+      for(let i = 0; i < data.length; i++){     
+      
+        someColumns += `
+        <tr class='tdrows'>
+          <td>${i}</td>
+          <td>${data[i].Area}</td>
+          <td>${data[i].PropertyName}</td>
+          <td>${data[i].PropertyType}</td>
+          <td>${data[i].Bedrooms}</td>
+          <td>${data[i].Furniture}</td>
+          <td>${data[i].Price}</td>
+          <td>${data[i].UnitNumber}</td>
+          <td>${data[i].Status}</td>
+          <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
+        </tr>        
+        `
+      }
+    }
+    document.getElementById('tbody').innerHTML = someColumns;
+        
+  }
+
+colorizeTable()
+  
+
+
+////////////////////////////////////////////////////////////////////////////
+//////////////////////         Seacrh           ///////////////////////////            
 //////////////////////////////////////////////////////////////////////////
   
 
@@ -117,11 +165,12 @@ window.searchData = searchData
 window.onload = document.getElementById('search').focus();
 
 
-
+//////////////////////////////////////////////////////////////////////////
+//////////////////////         Left  Div           ///////////////////////            
+//////////////////////////////////////////////////////////////////////////
 
 export function leftDiv(){
-  // const yy = document.getElementsById("idhead")
-  // const search = document.getElementById("search")
+
   const  figuersDiv = document.createElement('div');
   figuersDiv.id = 'idfiguersDiv'
   figuersDiv.style.display = 'flex'
@@ -161,13 +210,12 @@ export function leftDiv(){
 
 }
 
-// leftDiv()
 
-
+//////////////////////////////////////////////////////////////////////////
+//////////////////////         Right Div           ///////////////////////            
+//////////////////////////////////////////////////////////////////////////
 
 export function rightDiv(){
-  // const yy = document.getElementsById("idhead")
-  // const search = document.getElementById("search")
   const  figuersDiv = document.createElement('div');
   figuersDiv.id = 'idfiguersDiv'
   figuersDiv.style.display = 'flex'
@@ -202,17 +250,8 @@ export function rightDiv(){
       alert(`Hello, ${name}!`);
       });
   })
-  // yy.before(figuersDiv)
+
   const aa = document.getElementById("idmainPage")
-  // const aa = document.getElementsByName('body')
   aa.after(figuersDiv)
 
 }
-
-// rightDiv()
-
-
-
-// use to start 
-// window.onload = document.getElementById('search').value = ''
-// window.onload = document.getElementById('search').onkeyup()
