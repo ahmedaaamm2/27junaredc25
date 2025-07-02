@@ -1,9 +1,6 @@
-// import {userss} from './database.js'
+
 
 import { data } from './database.js';
-
-// import {getVedio} from './main.js'
-// import {getLocation} from './main.js'
 
 
 export function getDetails(i){     
@@ -61,7 +58,7 @@ export function getDetails(i){
 
   divInTwo.innerHTML = table;
   
-  document.getElementById('idsearchblock').after(newDiv) /// ading the created div after search bar
+  document.getElementById('search').after(newDiv) /// ading the created div after search bar
   
 
   document.getElementById('idClose').addEventListener('click', function() {newDiv.remove()});

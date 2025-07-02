@@ -24,9 +24,7 @@
     --text-input-fieled: gray; 
 }   
 
-.tdClass{
-    background-color: #f44336;
-}
+
 body{
     display: flex;
     background-color: #f3f3f3;
@@ -60,13 +58,10 @@ input{
 }
 
 button{
-    width: 100%;
-    height: 45px;
-    /* border-radius: 7px; */
-    outline: none;
-    border: none;
+    width: 80%;
+    height: fit-content;
     font-weight: bold;
-    font-size: 16px;
+    
 }
 
 .head{
@@ -181,26 +176,17 @@ table{
 
 th{
     height: 50px;
-    
-    /* background-color: #2c8b29; */
 
 }
 
 th, .head{
-    /* box-shadow: 3px 3px 3px 3px #1a1919; */
     background-color: #ffdd6e;  
     color: #000000;
     width: 100;
 }
 
-.tdrows{
-    border-radius: 10px;
-    
-    
-}
 
 .throws{
-    /* border-radius: 10px; */
     outline: #000000 1px solid;
     box-shadow: 3px 3px 3px 3px #1a1919;
     margin-top: 20px;
@@ -209,24 +195,32 @@ th, .head{
 
 
 td{
-    height: 20px;
-    padding: 0 10px;
-    /* margin-top: 50px; */
-    /* border-spacing: 30px; */
+    padding: 5px 5px;
+    background-color: rgb(235, 231, 231);
 }
 
 #idgetDetails{
     border-radius: 7px;
-    /* outline: 2px solid #000000; */
     border: none;
-    margin-right: 20px;
-    /* font-weight: bold; */
-    /* background-color: #fffbfb; */
-    background-color: silver;
+    margin-right: 10px;
+    
     background-color: none;
-    /* color: #e8bb67; */
     font-size: 16px;
     box-shadow: 5px 5px 5px 5px #1a1919;
+}
+
+.qqq{
+    border-radius: 7px;
+    background-color: none;
+    
+    font-size: 16px;
+    outline: none;
+
+}
+
+
+
+.qqq, td, #idgetDetails{
     height: 40px;
 }
 

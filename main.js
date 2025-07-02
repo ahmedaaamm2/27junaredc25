@@ -34,7 +34,7 @@ function figuers(){
   figuersDiv.style.padding = '0px 15px';
   figuersDiv.style.backgroundColor = 'brown'
 
-  const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
+  const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'All 100']
 
   btnFiguers.forEach((name, index) => {
       const buttons = document.createElement('button');
@@ -46,13 +46,43 @@ function figuers(){
       buttons.style.marginTop = '5px'
       figuersDiv.append(buttons)
 
-      buttons.addEventListener('click', () => {
-      console.log(`${name} button was clicked!`);
-      alert(`Hello, ${name}!`);
-      });
+  buttons.addEventListener('click', () => {
+    let someColumns = '';
+    for(let i = 0; i < data.length; i++){    
+      if(data[i].Status.includes(name[0]+name[1]) ) 
+        {
+        someColumns += `
+          <tr class='tdrows'>
+            <td>${i}</td>
+            <td>${data[i].Area}</td>
+            <td>${data[i].PropertyName}</td>
+            <td>${data[i].PropertyType}</td>
+            <td>${data[i].Bedrooms}</td>
+            <td>${data[i].Furniture}</td>
+            <td>${data[i].Price}</td>
+            <td>${data[i].UnitNumber}</td>
+            <td>${data[i].Status}</td>
+            <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
+          </tr>        
+          `
+    }
+  
+  }
+    
+    document.getElementById('tbody').innerHTML = someColumns;
+        
+
   })
-  document.getElementById("head1Div").before(figuersDiv)
-}
+
+colorizeTable()
+  
+})
+
+
+document.getElementById('search').after(figuersDiv)
+}      
+
+
 figuers()
 window.figuers = figuers
 

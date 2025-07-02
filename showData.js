@@ -39,7 +39,7 @@ export function showSpesific(){
             <tr class='tdrows'>
                 <td>${i}</td>
                 <td>${data[i].Area}</td>
-                <td>${data[i].PropertyName}</td>
+                <td><button onclick="rr()" class='qqq' >${data[i].PropertyName}</button></td>
                 <td>${data[i].PropertyType}</td>
                 <td>${data[i].Bedrooms}</td>
                 <td>${data[i].Furniture}</td>
