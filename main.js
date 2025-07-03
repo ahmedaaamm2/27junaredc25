@@ -26,10 +26,12 @@ function figuers(){
   figuersDiv.style.width = '100%'
   figuersDiv.style.border = '1px solid gray'
   figuersDiv.style.display = 'flex'
+  figuersDiv.style.justifyContent = 'center'
+  figuersDiv.style.alignItems = 'center'
   figuersDiv.style.border = 'space-evenly'
   figuersDiv.style.gap = '4px'
   figuersDiv.style.padding = '0px 15px';
-  figuersDiv.style.backgroundColor = 'brown'
+  figuersDiv.style.backgroundColor = 'gray'
 
   // const table = document.getElementById("tbody")
   // for(let i = 0; i < table.rows.length; i++){
@@ -38,19 +40,19 @@ function figuers(){
 
   // } 
 
-  const table = document.getElementById("tbody");
-  // const searchValue = "Vacant";
+  // const table = document.getElementById("tbody");
+  // // const searchValue = "Vacant";
 
-  // Get all cells (td elements) in the table
-  const cells = table.querySelectorAll("td");
+  // // Get all cells (td elements) in the table
+  // const cells = table.querySelectorAll("td");
 
-  cells.forEach(cell => {
-    if (cell.textContent.mainString.includes('Vacant')) {
-      console.log(cell.textContent.mainString.includes('Vacant').length)
-    }
-  });
+  // cells.forEach(cell => {
+  //   if (cell.textContent.mainString.includes('Vacant')) {
+  //     console.log(cell.textContent.mainString.includes('Vacant').length)
+  //   }
+  // });
 
-  // console.log(`Number of times '${searchValue}' appears in data cells:`, countOfValue);
+  // // console.log(`Number of times '${searchValue}' appears in data cells:`, countOfValue);
 
 
   const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'All 100']
@@ -59,10 +61,9 @@ function figuers(){
       const buttons = document.createElement('button');
       buttons.textContent = name
       buttons.style.backgroundColor = 'graay'
-      buttons.style.height = '25px'
+      buttons.style.height = '90%'
       buttons.style.borderRadius = '10px'
       buttons.style.fontSize = '13px'
-      buttons.style.marginTop = '5px'
       figuersDiv.append(buttons)
 
   buttons.addEventListener('click', () => {
@@ -71,6 +72,8 @@ function figuers(){
 
 
 document.getElementById('search').after(figuersDiv)
+
+
 })}      
 
 figuers()
@@ -125,10 +128,11 @@ function onFiguresClick(name){
       }
     }
     document.getElementById('tbody').innerHTML = someColumns;
-        
+
+  colorizeTable()      
+
   }
 
-colorizeTable()
   
 
 

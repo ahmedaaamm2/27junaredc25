@@ -23,13 +23,10 @@ export function showData(){
     const tbody = document.createElement('tbody');
     window.tbody = tbody
     tbody.id = 'tbody'
-    tbody.style.marginTop = '30px' 
     showSpesific()
     table.appendChild(tbody);
     document.getElementById("tableDiv").append(table)
-
 }
-
 
 export function showSpesific(){
     let someColumns = '';
