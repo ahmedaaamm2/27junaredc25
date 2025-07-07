@@ -51,6 +51,8 @@ export function showSpesific(){
         
     tbody.innerHTML = someColumns;
 
+    
+
 }
 
 
