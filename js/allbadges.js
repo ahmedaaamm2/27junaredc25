@@ -1,5 +1,6 @@
 import { showData } from "/js/showData.js"
 import {colorizeTable} from "/js/coloring.js"
+import { rightDiv, leftDiv } from "/js/rightLeft.js"
 
 export function allBadgesFnc(){
     const centerMainDiv = document.createElement('div')
@@ -20,8 +21,12 @@ export function allBadgesFnc(){
     headDivFnc()
     searchDivFnc()
     tableDivFnc()
+    rightDiv()
+    leftDiv()
 
 }
+
+
 
 
 export function headDivFnc(){
@@ -30,8 +35,7 @@ export function headDivFnc(){
     headDiv.className = 'CLASSheadDiv'
     headDiv.style.height = '80px'
     headDiv.style.width = '100%'
-    // headDiv.style.backgroundColor = 'green'
-
+   
     headDiv.style.display = 'flex'
     headDiv.style.flexDirection = 'column'
     headDiv.style.justifyContent = 'center'
@@ -82,9 +86,6 @@ export function searchDivFnc(){
     SearchDiv.append(SearchInput)
 
 }
-
-
-
 
 
 export function tableDivFnc(){

@@ -1,3 +1,4 @@
+import { allBadgesFnc } from './allBadges.js';
 import { data } from './database.js';
 
 export function getDetails(i){     
@@ -58,8 +59,20 @@ export function getDetails(i){
   document.getElementById('IDseacrhDiv').after(newDiv) /// ading the created div after search bar
   
 
-  document.getElementById('idClose').addEventListener('click', function() {newDiv.remove()});
+  // document.getElementById('idClose').addEventListener('click', function() {newDiv.remove()});
+
+    // document.getElementById('idClose').addEventListener('click', function() {
+    //   allBadgesFnc.disabled()});
   
+
+  document.getElementById('idClose').onclick = function() {
+
+    allBadgesFnc.preventDefault()
+};  
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // close details and vedio and location container
