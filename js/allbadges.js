@@ -1,6 +1,8 @@
 import { showData } from "/js/showData.js"
 import {colorizeTable} from "/js/coloring.js"
 import { rightDiv, leftDiv } from "/js/rightLeft.js"
+import { figuers } from "/js/figures.js"
+import { adddataButton } from "/js/adddata.js"
 
 export function allBadgesFnc(){
     const centerMainDiv = document.createElement('div')
@@ -19,10 +21,12 @@ export function allBadgesFnc(){
     document.body.append(centerMainDiv)
 
     headDivFnc()
+    adddataButton()
+    pfButton()
     searchDivFnc()
+    figuers()
     tableDivFnc()
-    rightDiv()
-    leftDiv()
+
 
 }
 
@@ -61,29 +65,6 @@ export function headDivFnc(){
 
     head2Div.style.display = 'flex'
     document.getElementById('IDheadDiv').append(head2Div)
-
-}
-
-export function searchDivFnc(){
-    const SearchDiv = document.createElement('div')
-    SearchDiv.id = 'IDseacrhDiv'
-    SearchDiv.className = 'CLASSseacrhDiv'
-    SearchDiv.style.height = '40px'
-    SearchDiv.style.width = '100%'
-    // SearchDiv.style.backgroundColor = 'yellow'
-
-    SearchDiv.style.display = 'flex'
-    SearchDiv.style.flexDirection = 'column'
-    SearchDiv.style.justifyContent = 'center'
-    SearchDiv.style.alignItems = 'center '
-    document.getElementById('IDcenterMainDiv').append(SearchDiv)
-
-    const SearchInput = document.createElement('input')
-    SearchInput.id = 'IDSearchInput'
-    SearchInput.style.height = '90%'
-    SearchInput.style.width = '95%'
-
-    SearchDiv.append(SearchInput)
 
 }
 

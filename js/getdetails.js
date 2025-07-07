@@ -59,16 +59,16 @@ export function getDetails(i){
   document.getElementById('IDseacrhDiv').after(newDiv) /// ading the created div after search bar
   
 
-  // document.getElementById('idClose').addEventListener('click', function() {newDiv.remove()});
+  document.getElementById('idClose').addEventListener('click', function() {newDiv.remove()});
 
     // document.getElementById('idClose').addEventListener('click', function() {
     //   allBadgesFnc.disabled()});
   
 
-  document.getElementById('idClose').onclick = function() {
+//   document.getElementById('idClose').onclick = function() {
 
-    allBadgesFnc.preventDefault()
-};  
+//     allBadgesFnc.preventDefault()
+// };  
 
 
 

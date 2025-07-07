@@ -12,7 +12,7 @@ export function adddataButton(){
     btn.style.margin = 'auto'
     btn.style.borderRadius = '10px'
     btn.style.fontSize = '12px'
-    document.getElementById('head2Div').appendChild(btn)
+    document.getElementById('head2Div').append(btn)
 
     btn.addEventListener('click', () => {
     let div = document.getElementById('idaddDataContainer');
@@ -23,8 +23,6 @@ export function adddataButton(){
     }
     });
 }
-
-adddataButton() 
 
 
 
@@ -180,33 +178,35 @@ export function dataInDivUp(){
 //////////////////////////////////////////////////////////////////////////
 
 export function pfButton(){
-  const btn = document.createElement('button');
-  btn.id = 'idcollectData'
-  btn.textContent = 'My Ads'
-  btn.style.height = '30px'
-  btn.style.width = '15%'
-  btn.style.backgroundColor = 'silver'
-  btn.style.margin = 'auto'
-  btn.style.borderRadius = '10px'
-  btn.style.fontSize = '12px'
-  document.getElementById('head2Div').appendChild(btn)
+    const btn = document.createElement('button');
+    btn.id = 'idcollectData'
+    btn.textContent = 'My Ads'
+    btn.style.height = '30px'
+    btn.style.width = '15%'
+    btn.style.backgroundColor = 'silver'
+    btn.style.margin = 'auto'
+    btn.style.borderRadius = '10px'
+    btn.style.fontSize = '12px'
+    document.getElementById('head2Div').append(btn)
+
+    btn.addEventListener('click', () => {
+        // checkFnc()
+        let div = document.getElementById('idpfDiv');
+        if (div) {
+            div.remove();
+        } else {
+            pfDiv()
+        }
 
 
+        
+        });
 
-  btn.addEventListener('click', () => {
-    checkFnc()
-    // let div = document.getElementById('idpfDiv');
-    
-    // if (div) {
-    //     div.remove();
-    // } else {
-    //     pfDiv()
-    // }
-    });
-
-  return btn;
+    return btn;
 }
-pfButton() 
+// pfButton() 
+
+window.pfButton = pfButton
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -236,12 +236,12 @@ pfButton()
 
 
 
-export function checkFnc() {
-    if (FncPages.NewDataDivFnc.disabled){
-        FncPages.NewDataDivFnc()
-    } else {return};
+// export function checkFnc() {
+//     if (FncPages.NewDataDivFnc.disabled){
+//         FncPages.NewDataDivFnc()
+//     } else {return};
 
-  }
+//   }
   
   // Disable the function
 //   myFunction.disabled = true;
@@ -272,8 +272,5 @@ export function pfDiv(){
 }
 
 
-document.getElementById('IDSearchInput').addEventListener('keyup', function() {
-const div = document.getElementById('idpfDiv');
-if (div) {div.remove()} 
-})
+
 
