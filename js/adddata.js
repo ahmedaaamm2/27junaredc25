@@ -2,6 +2,46 @@ import * as FncPages from "/js/allBadges.js";
 
 const collectedData = [];
 
+
+
+export function NewDataDivFnc(){
+
+    const NewDataDiv = document.createElement('div')
+    NewDataDiv.id = 'IDNewDataDiv'
+    NewDataDiv.className = 'CLASSseacrhDiv'
+    NewDataDiv.style.height = '600px'
+    NewDataDiv.style.width = '100%'
+    NewDataDiv.style.display = 'flex'
+    NewDataDiv.style.flexDirection = 'column'
+    NewDataDiv.style.justifyContent = 'center'
+    NewDataDiv.style.alignItems = 'center '
+    NewDataDiv.style.gap = '10px'
+    document.getElementById('IDseacrhDiv').after(NewDataDiv)
+
+}
+
+
+export function closeDataDiv(){
+    const dataDiv = document.getElementById('IDNewDataDiv')
+    const btn = document.createElement('button');
+    btn.id = 'idcoloseDataDiv'
+    btn.textContent = 'close'
+    btn.style.height = '50px'
+    btn.style.width = '50%'
+    btn.style.backgroundColor = 'red'
+    // btn.style.marginTop = '0'
+    // btn.style.position = 'absolute'
+    btn.style.borderRadius = '10px'
+    btn.style.fontSize = '12px'
+    document.getElementById('IDNewDataDiv').append(btn)
+
+    btn.addEventListener('click', () => {
+        dataDiv.remove()
+    })
+
+}
+
+
 export function adddataButton(){
     const btn = document.createElement('button');
     btn.id = 'idcollectData'
@@ -12,38 +52,28 @@ export function adddataButton(){
     btn.style.margin = 'auto'
     btn.style.borderRadius = '10px'
     btn.style.fontSize = '12px'
-    document.getElementById('head2Div').appendChild(btn)
+    document.getElementById('head2Div').append(btn)
 
     btn.addEventListener('click', () => {
-    let div = document.getElementById('idaddDataContainer');
-    if (div) {
-        div.remove();
+    const dataDiv = document.getElementById('IDNewDataDiv')
+    if (dataDiv) {
+        dataDiv.remove();
     } else {
         collectDataContainer()
+        closeDataDiv()
     }
+
     });
+
+    
 }
-
-adddataButton() 
-
-
-
-// export function btnUp(name){
-//     const buttons = document.createElement('button');
-//     buttons.textContent = name
-//     buttons.className = 'adddatachosebtn'
-
-// }
 
 
 
 export function collectDataContainer(){
+    NewDataDivFnc()
 
-    let addDataContainer = document.createElement('div');
-    addDataContainer.id = 'idaddDataContainer'
-    document.getElementById('IDheadDiv').after(addDataContainer)
-
-
+    const dataDiv = document.getElementById('IDNewDataDiv')
     let newDataDivUp = document.createElement('div');
     newDataDivUp.id = 'idnewDataDivUp'
 
@@ -51,7 +81,7 @@ export function collectDataContainer(){
     newDataDivDown.id = 'idnewDataDivDown'
 
     const xx = [newDataDivUp, newDataDivDown]
-    for (let i = 0; i < xx.length; i++) {addDataContainer.append(xx[i])}
+    for (let i = 0; i < xx.length; i++) {dataDiv.append(xx[i])}
    
     collectData()
 }
@@ -141,16 +171,17 @@ export function showCollectedData(){
 
 
     button.addEventListener('click', () => {
-        addDataContainer.innerHTML = `<p id='p'>Data has been sent sucsessfuly</p>`
-        addDataContainer.justifyContent = 'center'
-        addDataContainer.style.height = '300px'
+        const dataDiv = document.getElementById('IDNewDataDiv')
+        dataDiv.innerHTML = `<p id='p'>Data has been sent sucsessfuly</p>`
+        dataDiv.justifyContent = 'center'
+        dataDiv.style.height = '300px'
         document.getElementById('p').style.color = 'green'
         document.getElementById('p').style.fontSize = '20px'
 
         setTimeout(function() {
-            if (addDataContainer) {
-                addDataContainer.innerHTML = ''   
-                addDataContainer.remove();
+            if (dataDiv) {
+                dataDiv.innerHTML = ''   
+                dataDiv.remove();
             }}, 2000);    
     });
 
@@ -180,100 +211,48 @@ export function dataInDivUp(){
 //////////////////////////////////////////////////////////////////////////
 
 export function pfButton(){
-  const btn = document.createElement('button');
-  btn.id = 'idcollectData'
-  btn.textContent = 'My Ads'
-  btn.style.height = '30px'
-  btn.style.width = '15%'
-  btn.style.backgroundColor = 'silver'
-  btn.style.margin = 'auto'
-  btn.style.borderRadius = '10px'
-  btn.style.fontSize = '12px'
-  document.getElementById('head2Div').appendChild(btn)
+    const btn = document.createElement('button');
+    btn.id = 'idcollectData'
+    btn.textContent = 'My Ads'
+    btn.style.height = '30px'
+    btn.style.width = '15%'
+    btn.style.backgroundColor = 'silver'
+    btn.style.margin = 'auto'
+    btn.style.borderRadius = '10px'
+    btn.style.fontSize = '12px'
+    document.getElementById('head2Div').append(btn)
 
+    btn.addEventListener('click', () => {
+        const dataDiv = document.getElementById('IDNewDataDiv')
+        if (dataDiv) {
+            dataDiv.remove();
+        } else {
+            pfDiv()
+        }
 
+        
+        });
 
-  btn.addEventListener('click', () => {
-    checkFnc()
-    // let div = document.getElementById('idpfDiv');
-    
-    // if (div) {
-    //     div.remove();
-    // } else {
-    //     pfDiv()
-    // }
-    });
-
-  return btn;
+    return btn;
 }
-pfButton() 
 
-//////////////////////////////////////////////////////////////////////////
+window.pfButton = pfButton
 
-// export function pfDiv(){
-//     let newDataDiv = document.createElement('div');
-//     newDataDiv.id = 'idpfDiv'
-//     newDataDiv.style.display = 'flex'
-//     newDataDiv.style.flexDirection = 'column'
-//     newDataDiv.style.justifyContent = 'space-evenly'
-//     newDataDiv.style.alignItems = 'center'
-//     newDataDiv.style.height = '620px'
-//     newDataDiv.style.width = '100%'
-//     newDataDiv.style.outline = '1px gray solid'
-//     newDataDiv.style.borderRadius = '10px'
-//     newDataDiv.style.padding = '10px'
-//     newDataDiv.style.gap = '5px'
-
-//     const iframe = document.createElement('iframe')
-//     iframe.height = '100%';
-//     iframe.width = '100%';
-//     iframe.src = 'https://www.propertyfinder.qa/en/agent/ahmed-abdelkader-2805';
-//     newDataDiv.append(iframe)
-
-//     document.getElementById('IDheadDiv').after(newDataDiv)
-
-// }
-
-
-
-export function checkFnc() {
-    if (FncPages.NewDataDivFnc.disabled){
-        FncPages.NewDataDivFnc()
-    } else {return};
-
-  }
-  
-  // Disable the function
-//   myFunction.disabled = true;
 
 
 export function pfDiv(){
-    let newDataDiv = document.createElement('div');
-    newDataDiv.id = 'idpfDiv'
-    newDataDiv.style.display = 'flex'
-    newDataDiv.style.flexDirection = 'column'
-    newDataDiv.style.justifyContent = 'space-evenly'
-    newDataDiv.style.alignItems = 'center'
-    newDataDiv.style.height = '620px'
-    newDataDiv.style.width = '100%'
-    newDataDiv.style.outline = '1px gray solid'
-    newDataDiv.style.borderRadius = '10px'
-    newDataDiv.style.padding = '10px'
-    newDataDiv.style.gap = '5px'
-
+    NewDataDivFnc()
+    const dataDiv = document.getElementById('IDNewDataDiv')
     const iframe = document.createElement('iframe')
     iframe.height = '100%';
     iframe.width = '100%';
     iframe.src = 'https://www.propertyfinder.qa/en/agent/ahmed-abdelkader-2805';
-    newDataDiv.append(iframe)
-
-    document.getElementById('IDheadDiv').after(newDataDiv)
+    // document.getElementById('IDNewDataDiv')
+    dataDiv.append(iframe)
 
 }
 
 
-document.getElementById('IDSearchInput').addEventListener('keyup', function() {
-const div = document.getElementById('idpfDiv');
-if (div) {div.remove()} 
-})
+
+
 

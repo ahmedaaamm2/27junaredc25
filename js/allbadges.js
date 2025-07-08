@@ -1,6 +1,8 @@
 import { showData } from "/js/showData.js"
 import {colorizeTable} from "/js/coloring.js"
 import { rightDiv, leftDiv } from "/js/rightLeft.js"
+import { figuers } from "/js/figures.js"
+import { adddataButton } from "/js/adddata.js"
 
 export function allBadgesFnc(){
     const centerMainDiv = document.createElement('div')
@@ -19,10 +21,12 @@ export function allBadgesFnc(){
     document.body.append(centerMainDiv)
 
     headDivFnc()
+    adddataButton()
+    pfButton()
     searchDivFnc()
+    figuers()
     tableDivFnc()
-    rightDiv()
-    leftDiv()
+
 
 }
 
@@ -62,6 +66,7 @@ export function headDivFnc(){
 
 }
 
+<<<<<<< HEAD
 
 export function searchDivFnc(){
     const SearchDiv = document.createElement('div')
@@ -70,21 +75,10 @@ export function searchDivFnc(){
     SearchDiv.style.height = '40px'
     SearchDiv.style.width = '100%'
     // SearchDiv.style.backgroundColor = 'yellow'
+=======
+>>>>>>> 7a7dfe03cec383cde043112f1259d8c2259d7f63
 
-    SearchDiv.style.display = 'flex'
-    SearchDiv.style.flexDirection = 'column'
-    SearchDiv.style.justifyContent = 'center'
-    SearchDiv.style.alignItems = 'center '
-    document.getElementById('IDcenterMainDiv').append(SearchDiv)
 
-    const SearchInput = document.createElement('input')
-    SearchInput.id = 'IDSearchInput'
-    SearchInput.style.height = '90%'
-    SearchInput.style.width = '95%'
-
-    SearchDiv.append(SearchInput)
-
-}
 
 
 export function tableDivFnc(){
@@ -101,25 +95,8 @@ export function tableDivFnc(){
 }
 
 
-export function NewDataDivFnc(){
-    const NewDataDiv = document.createElement('div')
-    NewDataDiv.id = 'IDNewDataDiv'
-    NewDataDiv.className = 'CLASSseacrhDiv'
-    NewDataDiv.style.height = '40px'
-    NewDataDiv.style.width = '100%'
-    // SearchDiv.style.backgroundColor = 'yellow'
 
-    NewDataDiv.style.display = 'flex'
-    NewDataDiv.style.flexDirection = 'column'
-    NewDataDiv.style.justifyContent = 'center'
-    NewDataDiv.style.alignItems = 'center '
-    document.getElementById('IDseacrhDiv').after(NewDataDiv)
 
-    const SearchInput = document.createElement('input')
-    SearchInput.id = 'IDSearchInput'
-    SearchInput.style.height = '90%'
-    SearchInput.style.width = '95%'
 
-    NewDataDiv.append(SearchInput)
 
-}
+

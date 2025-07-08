@@ -65,7 +65,7 @@ export function rightDiv(){
     btnFiguers.forEach((name, index) => {
         const buttons = document.createElement('button');
         buttons.textContent = name
-        buttons.style.backgroundColor = 'gray'
+        // buttons.style.backgroundColor = 'gray'
         buttons.style.height = '30px'
         buttons.style.borderRadius = '10px'
         buttons.style.fontSize = '13px'

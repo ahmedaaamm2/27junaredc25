@@ -171,16 +171,23 @@ table{
     width: 100%;
     text-align: center;
     border-spacing: 0 5px;
+    /* transform: rotateZ(1deg); */
+    margin-top: 2px;
 } 
 
 th{
     height: 50px;
 }
 
-th, #IDheadDiv, .CLASSfiguersDiv{
+th, #IDheadDiv{
     background-color: #ffdd6e;  
     color: #000000;
     width: 100;
+}
+
+.CLASSfiguersDiv{
+    background-color: #ffffff;  
+    
 }
 
 .throws{
