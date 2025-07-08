@@ -21,8 +21,6 @@ export function searchDivFnc(){
 
     SearchDiv.append(SearchInput)
 
-    // searchData()
-
 }
 
 
@@ -31,8 +29,8 @@ window.searchDivFnc = searchDivFnc
 export function searchData(value){   
     let someColumns = '';
     for(let i = 0; i < data.length; i++){    
-    if(data[i].Area.includes(value) || data[i].Price.toString().includes(value) || data[i].Status.includes(value)
-        || data[i].Activites.toString().includes(value) || data[i].mobile.includes(value)){
+    if(data[i].PropertyName.includes(value) || data[i].Bedrooms.toString().includes(value) 
+        ){
         someColumns += `
         <tr class='tdrows'>
             <td>${i}</td>
@@ -54,12 +52,19 @@ export function searchData(value){
 
 
     document.getElementById('IDSearchInput').addEventListener('keyup', function() {
-    const div = document.getElementById('idpfDiv');
-    if (div) {div.remove()} 
-
+        searchData()
+        // const dataDiv = document.getElementById('IDNewDataDiv')
+        // dataDiv.remove();
+        // if (dataDiv) {
+        //     dataDiv.remove();
+        // } else {
+        //     searchData()
+        // }
     })
 
 }
+// searchData()
+// window.searchData = searchData
 
 
 

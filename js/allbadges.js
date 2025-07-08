@@ -86,25 +86,8 @@ export function tableDivFnc(){
 }
 
 
-export function NewDataDivFnc(){
-    const NewDataDiv = document.createElement('div')
-    NewDataDiv.id = 'IDNewDataDiv'
-    NewDataDiv.className = 'CLASSseacrhDiv'
-    NewDataDiv.style.height = '40px'
-    NewDataDiv.style.width = '100%'
-    // SearchDiv.style.backgroundColor = 'yellow'
 
-    NewDataDiv.style.display = 'flex'
-    NewDataDiv.style.flexDirection = 'column'
-    NewDataDiv.style.justifyContent = 'center'
-    NewDataDiv.style.alignItems = 'center '
-    document.getElementById('IDseacrhDiv').after(NewDataDiv)
 
-    const SearchInput = document.createElement('input')
-    SearchInput.id = 'IDSearchInput'
-    SearchInput.style.height = '90%'
-    SearchInput.style.width = '95%'
 
-    NewDataDiv.append(SearchInput)
 
-}
+

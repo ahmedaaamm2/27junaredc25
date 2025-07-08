@@ -1,9 +1,11 @@
-import { allBadgesFnc } from './allBadges.js';
+import { NewDataDivFnc } from '/js/adddata.js';
 import { data } from './database.js';
 
+// const dataDiv = document.getElementById('IDNewDataDiv')
+
 export function getDetails(i){     
-  if(document.contains(document.getElementById('idnewDiv'))){   ///// prevent doublicate when details button is clicked
-    document.getElementById('idnewDiv').remove()}
+  if(document.contains(document.getElementById('IDNewDataDiv'))){   ///// prevent doublicate when details button is clicked
+    document.getElementById('IDNewDataDiv').remove()}
 
   let table = '';
 
@@ -26,19 +28,10 @@ export function getDetails(i){
 
   `
 
-  const newDiv = document.createElement('div');
-  newDiv.id = 'idnewDiv';  
-  newDiv.style.display = 'flex';
-  newDiv.style.justifyContent = 'space-evenly';
-  newDiv.style.padding = '10px';
-  newDiv.style.gap = '10px';
-  newDiv.style.height = 'fitcontent';
-  newDiv.style.backgroundColor = '#000000';
-  newDiv.style.borderRadius = '10px';
-  newDiv.style.margin = '2px';
-  newDiv.style.marginTop = '15px';
-
-
+      
+  NewDataDivFnc()    
+  const dataDiv = document.getElementById('IDNewDataDiv')
+  dataDiv.style.flexDirection = 'row'
   const divInOne = document.createElement('div');
   const divInTwo = document.createElement('div');
   const divInThree = document.createElement('div');
@@ -50,58 +43,28 @@ export function getDetails(i){
   divInOne.id = 'iddivInOne'
   divInThree.id = 'iddivInThree'
   const xx = [divInOne, divInTwo, divInThree]
-
-  for (let i = 0; i < xx.length; i++) {newDiv.append(xx[i])}
+  for (let i = 0; i < xx.length; i++) {dataDiv.append(xx[i])}
 
 
   divInTwo.innerHTML = table;
-  
-  document.getElementById('IDseacrhDiv').after(newDiv) /// ading the created div after search bar
-  
-
-  document.getElementById('idClose').addEventListener('click', function() {newDiv.remove()});
-
-    // document.getElementById('idClose').addEventListener('click', function() {
-    //   allBadgesFnc.disabled()});
-  
-
-//   document.getElementById('idClose').onclick = function() {
-
-//     allBadgesFnc.preventDefault()
-// };  
+  document.getElementById('idClose').addEventListener('click', function() {dataDiv.remove()});
 
 
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+  // adding vedio and location and disable clicking    
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+  document.getElementById('vedioButton').click()
+  document.getElementById('vedioButton').click()
+  document.getElementById('locationButton').click()
+  document.getElementById('locationButton').click()
 
+  document.getElementById('IDSearchInput').focus();
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-// close details and vedio and location container
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-  document.getElementById('IDSearchInput').addEventListener('keyup', function() {
-  const div = document.getElementById('idnewDiv');
-    if (div) {div.remove()} 
-  })
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-// adding vedio and location and disable clicking    
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-document.getElementById('vedioButton').click()
-document.getElementById('vedioButton').click()
-document.getElementById('locationButton').click()
-document.getElementById('locationButton').click()
-
-function handleClick() {
-  document.getElementById('vedioButton').disabled = true;
-  document.getElementById('vedioButton').removeEventListener('click', getVedio());
-  document.getElementById('locationButton').disabled = true;
-  document.getElementById('locationButton').removeEventListener('click', getVedio());
-}
-handleClick()
-/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
 
 
-window.getDetails = getDetails
+window.getDetails = getDetails 
 
 
 
