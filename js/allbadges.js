@@ -27,8 +27,6 @@ export function allBadgesFnc(){
 }
 
 
-
-
 export function headDivFnc(){
     const headDiv = document.createElement('div')
     headDiv.id = 'IDheadDiv'
@@ -63,6 +61,7 @@ export function headDivFnc(){
     document.getElementById('IDheadDiv').append(head2Div)
 
 }
+
 
 export function searchDivFnc(){
     const SearchDiv = document.createElement('div')

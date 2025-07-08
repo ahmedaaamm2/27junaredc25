@@ -75,9 +75,6 @@ function onFiguresClick(name){
         `
       }
     }
-    
-  
-  // for(let i = 0; i < data.length; i++){   
 
     if(name.includes('All')) {
       console.log('includ All')
