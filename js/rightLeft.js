@@ -1,40 +1,53 @@
+import * as addData from "/js/adddata.js";
 
 
 export function leftDiv(){
-    const  figuersDiv = document.createElement('div');
-    figuersDiv.id = 'idfiguersDiv'
-    figuersDiv.className = 'CLASSfiguersDiv'
-    figuersDiv.style.display = 'flex'
-    figuersDiv.style.flexDirection = 'column'
-    figuersDiv.style.padding = '10px'
-    figuersDiv.style.height = 'fitcontent'
-    figuersDiv.style.width = '15%'
-    figuersDiv.style.border = '1px solid gray'
-    figuersDiv.style.border = 'space-evenly'
-    figuersDiv.style.gap = '4px'
-    figuersDiv.style.outline = '1px solid black'
-    figuersDiv.style.borderRadius = '10px'
+    const leftSideDiv = document.createElement('div');
+    leftSideDiv.id = 'idfiguersDiv'
+    leftSideDiv.className = 'CLASSfiguersDiv'
+    leftSideDiv.style.display = 'flex'
+    leftSideDiv.style.flexDirection = 'column'
+    leftSideDiv.style.padding = '10px'
+    leftSideDiv.style.height = 'fitcontent'
+    leftSideDiv.style.width = '15%'
+    leftSideDiv.style.border = '1px solid gray'
+    leftSideDiv.style.border = 'space-evenly'
+    leftSideDiv.style.gap = '4px'
+    leftSideDiv.style.outline = '1px solid black'
+    leftSideDiv.style.borderRadius = '10px'
     // figuersDiv.style.backgroundColor = '#e8d1d1'
 
-    const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
+    const leftSideBtnList = ['My Ads PF', 'Add Unit', 'Pray Time', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
 
-    btnFiguers.forEach((name, index) => {
-        const buttons = document.createElement('button');
-        buttons.textContent = name
-        buttons.style.height = '30px'
-        buttons.style.borderRadius = '10px'
-        buttons.style.fontSize = '13px'
-        buttons.style.marginTop = '5px'
-        figuersDiv.append(buttons)
+    leftSideBtnList.forEach((name, index) => {
+        const btn = document.createElement('button');
+        btn.textContent = name
+        btn.style.height = '30px'
+        btn.style.borderRadius = '10px'
+        btn.style.fontSize = '13px'
+        btn.style.marginTop = '5px'
+        leftSideDiv.append(btn)
 
-        buttons.addEventListener('click', () => {
-        console.log(`${name} button was clicked!`);
-        alert(`Hello, ${name}!`);
+        btn.addEventListener('click', () => {
+            const dataDiv = document.getElementById('IDNewDataDiv')
+            if (dataDiv) {
+                dataDiv.remove();
+            } else {
+                if(name.includes('My Ads')){
+                    addData.pfTrigger()
+                }else if(name.includes('Pray')){
+                    addData.prayTimeTrigger()
+                }else if(name.includes('Add')){
+                    addData.collectDataContainer()
+                    addData.closeDataDiv()
+                }
+            }
+
         });
     })
 
     const aa = document.getElementById('IDcenterMainDiv')
-    aa.before(figuersDiv)
+    aa.before(leftSideDiv)
 }
 
 // leftDiv()
@@ -45,24 +58,24 @@ export function leftDiv(){
 //////////////////////////////////////////////////////////////////////////
 
 export function rightDiv(){
-    const  figuersDiv = document.createElement('div');
-    figuersDiv.id = 'idfiguersDiv'
-    figuersDiv.className = 'CLASSfiguersDiv'
-    figuersDiv.style.display = 'flex'
-    figuersDiv.style.flexDirection = 'column'
-    figuersDiv.style.padding = '10px'
-    figuersDiv.style.height = 'fitcontent'
-    figuersDiv.style.width = '15%'
-    figuersDiv.style.border = 'space-evenly'
-    figuersDiv.style.gap = '4px'
-    figuersDiv.style.border = '4px'
-    figuersDiv.style.outline = '1px solid black'
-    figuersDiv.style.borderRadius = '10px'
+    const rightDivSide = document.createElement('div');
+    rightDivSide.id = 'idfiguersDiv'
+    rightDivSide.className = 'CLASSfiguersDiv'
+    rightDivSide.style.display = 'flex'
+    rightDivSide.style.flexDirection = 'column'
+    rightDivSide.style.padding = '10px'
+    rightDivSide.style.height = 'fitcontent'
+    rightDivSide.style.width = '15%'
+    rightDivSide.style.border = 'space-evenly'
+    rightDivSide.style.gap = '4px'
+    rightDivSide.style.border = '4px'
+    rightDivSide.style.outline = '1px solid black'
+    rightDivSide.style.borderRadius = '10px'
     // figuersDiv.style.backgroundColor = '#e8d1d1'
 
-    const btnFiguers = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
+    const rightSideBtnList = ['Leased 50', 'Vacant 10', 'Contract 15', 'Booked 15', 'Deposit 10', 'OnHold 0', 'Total 100']
 
-    btnFiguers.forEach((name, index) => {
+    rightSideBtnList.forEach((name, index) => {
         const buttons = document.createElement('button');
         buttons.textContent = name
         // buttons.style.backgroundColor = 'gray'
@@ -70,7 +83,7 @@ export function rightDiv(){
         buttons.style.borderRadius = '10px'
         buttons.style.fontSize = '13px'
         buttons.style.marginTop = '5px'
-        figuersDiv.append(buttons)
+        rightDivSide.append(buttons)
 
         buttons.addEventListener('click', () => {
         console.log(`${name} button was clicked!`);
@@ -80,12 +93,11 @@ export function rightDiv(){
 
 
     const aa = document.getElementById('IDcenterMainDiv')
-    aa.after(figuersDiv)
+    aa.after(rightDivSide)
 
 }
 
-// rightDiv()
 
+// sides.leftDiv()
+// sides.rightDiv()
 
-// window.leftDiv = leftDiv
-// window.rightDiv = rightDiv

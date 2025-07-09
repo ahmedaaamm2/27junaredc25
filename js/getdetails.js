@@ -61,34 +61,6 @@ export function getDetails(i){
   document.getElementById('IDSearchInput').focus();
 
 
-<<<<<<< HEAD
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-// close details and vedio and location container
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-  document.getElementById('IDSearchInput').addEventListener('keyup', function() {
-  const div = document.getElementById('idnewDiv');
-    if (div) {div.remove()} 
-  })
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-// adding vedio and location and disable clicking    
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-document.getElementById('vedioButton').click()
-document.getElementById('vedioButton').click()
-document.getElementById('locationButton').click()
-document.getElementById('locationButton').click()
-
-function handleClick() {
-  document.getElementById('vedioButton').disabled = true;
-  document.getElementById('vedioButton').removeEventListener('click', getVedio());
-  document.getElementById('locationButton').disabled = true;
-  document.getElementById('locationButton').removeEventListener('click', getVedio());
-}
-handleClick()
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-=======
->>>>>>> 7a7dfe03cec383cde043112f1259d8c2259d7f63
 }
 
 

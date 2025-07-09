@@ -42,31 +42,31 @@ export function closeDataDiv(){
 }
 
 
-export function adddataButton(){
-    const btn = document.createElement('button');
-    btn.id = 'idcollectData'
-    btn.textContent = 'Add'  /////////////////////////////////////////////// (   Add Button  )
-    btn.style.height = '30px'
-    btn.style.width = '15%'
-    btn.style.backgroundColor = 'silver'
-    btn.style.margin = 'auto'
-    btn.style.borderRadius = '10px'
-    btn.style.fontSize = '12px'
-    document.getElementById('head2Div').append(btn)
+// export function adddataButton(){
+//     const btn = document.createElement('button');
+//     btn.id = 'idcollectData'
+//     btn.textContent = 'Add'  /////////////////////////////////////////////// (   Add Button  )
+//     btn.style.height = '30px'
+//     btn.style.width = '15%'
+//     btn.style.backgroundColor = 'silver'
+//     btn.style.margin = 'auto'
+//     btn.style.borderRadius = '10px'
+//     btn.style.fontSize = '12px'
+//     document.getElementById('head2Div').append(btn)
 
-    btn.addEventListener('click', () => {
-    const dataDiv = document.getElementById('IDNewDataDiv')
-    if (dataDiv) {
-        dataDiv.remove();
-    } else {
-        collectDataContainer()
-        closeDataDiv()
-    }
+//     btn.addEventListener('click', () => {
+//     const dataDiv = document.getElementById('IDNewDataDiv')
+//     if (dataDiv) {
+//         dataDiv.remove();
+//     } else {
+//         collectDataContainer()
+//         closeDataDiv()
+//     }
 
-    });
+//     });
 
     
-}
+// }
 
 
 
@@ -192,14 +192,14 @@ export function showCollectedData(){
 
 export function dataInDivUp(){
     collectedData.forEach((btnName, index) => {
-        const buttons = document.createElement('button');
-        buttons.textContent = btnName
-        buttons.style.height = '100%';
-        buttons.style.width = '15%'
-        buttons.style.padding = '10px'
-        buttons.style.outline = '1px solid black' 
-        buttons.style.borderRadius = '10px'
-        document.getElementById('idnewDataDivUp').append(buttons)
+        const btn = document.createElement('button');
+        btn.textContent = btnName
+        btn.style.height = '100%';
+        btn.style.width = '20%'
+        btn.style.padding = '10px'
+        btn.style.outline = '1px solid black' 
+        btn.style.borderRadius = '10px'
+        document.getElementById('idnewDataDivUp').append(btn)
 
     })
     
@@ -207,40 +207,10 @@ export function dataInDivUp(){
 
 
 ////////////////////////////////////////////////////////////////////////////
-//////////////////////////   Property Finder  ///////////////////////////// 
+//////////////////////////  Prope rty Finder  ///////////////////////////// 
 //////////////////////////////////////////////////////////////////////////
 
-export function pfButton(){
-    const btn = document.createElement('button');
-    btn.id = 'idcollectData'
-    btn.textContent = 'My Ads'
-    btn.style.height = '30px'
-    btn.style.width = '15%'
-    btn.style.backgroundColor = 'silver'
-    btn.style.margin = 'auto'
-    btn.style.borderRadius = '10px'
-    btn.style.fontSize = '12px'
-    document.getElementById('head2Div').append(btn)
-
-    btn.addEventListener('click', () => {
-        const dataDiv = document.getElementById('IDNewDataDiv')
-        if (dataDiv) {
-            dataDiv.remove();
-        } else {
-            pfDiv()
-        }
-
-        
-        });
-
-    return btn;
-}
-
-window.pfButton = pfButton
-
-
-
-export function pfDiv(){
+export function pfTrigger(){
     NewDataDivFnc()
     const dataDiv = document.getElementById('IDNewDataDiv')
     const iframe = document.createElement('iframe')
@@ -253,6 +223,19 @@ export function pfDiv(){
 }
 
 
+////////////////////////////////////////////////////////////////////////////
+//////////////////////////  Pray Time  ///////////////////////////// 
+//////////////////////////////////////////////////////////////////////////
 
 
+export function prayTimeTrigger(){
+    NewDataDivFnc()
+    const dataDiv = document.getElementById('IDNewDataDiv')
+    const iframe = document.createElement('iframe')
+    iframe.height = '100%';
+    iframe.width = '100%';
+    iframe.src = 'https://prayers.qa/';
+    // document.getElementById('IDNewDataDiv')
+    dataDiv.append(iframe)
 
+}

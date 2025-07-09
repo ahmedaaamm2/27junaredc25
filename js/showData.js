@@ -1,7 +1,7 @@
 import { data } from "./database.js";
 
 
-const aredcBookingShort = ['Num', 'Area', 'Propert yName','Property Type','Bedrooms','Furniture','Price','Unit Number','Status','Details',]
+const aredcBookingShort = ['Num', 'Area', 'Property Name','Property Type','Bedrooms','Furniture','Price','Unit Number','Status','Details',]
 
 
 export function showData(){
@@ -51,7 +51,7 @@ export function showSpesific(){
         
     tbody.innerHTML = someColumns;
 
-    
+
 
 }
 

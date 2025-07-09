@@ -1,5 +1,6 @@
 
 import { data } from "/js/database.js";
+import {colorizeTable} from "/js/coloring.js"
 
 export function figuers(){
     const  figuersDiv = document.createElement('div');

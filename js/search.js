@@ -1,6 +1,6 @@
 
 import { data } from "/js/database.js";
-
+import { colorizeTable } from "/js/coloring.js";
 
 export function searchDivFnc(){
     const SearchDiv = document.createElement('div')
@@ -21,48 +21,59 @@ export function searchDivFnc(){
 
     SearchDiv.append(SearchInput)
 
+    document.getElementById('IDSearchInput').addEventListener('keyup', function() {
+        
+    const dataDiv = document.getElementById('IDNewDataDiv')
+    if (dataDiv) {
+        dataDiv.remove();
+    } else {
+        searchData(this.value)
+        colorizeTable
+
+    }
+
+    })
+
+
 }
 
 
 window.searchDivFnc = searchDivFnc
 
 export function searchData(value){   
+    console.log(value)
     let someColumns = '';
     for(let i = 0; i < data.length; i++){    
-    if(data[i].PropertyName.includes(value) || data[i].Bedrooms.toString().includes(value) 
-        ){
-        someColumns += `
-        <tr class='tdrows'>
-            <td>${i}</td>
-            <td>${data[i].Area}</td>
-            <td>${data[i].PropertyName}</td>
-            <td>${data[i].PropertyType}</td>
-            <td>${data[i].Bedrooms}</td>
-            <td>${data[i].Furniture}</td>
-            <td>${data[i].Price}</td>
-            <td>${data[i].UnitNumber}</td>
-            <td>${data[i].Status}</td>
-            <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
-        </tr>        
-        `
-    }}
+        if(data[i].PropertyName.includes(value.toUpperCase()) || data[i].Area.includes(value) 
+            ){
+            someColumns += `
+            <tr class='tdrows'>
+                <td>${i}</td>
+                <td>${data[i].Area}</td>
+                <td>${data[i].PropertyName}</td>
+                <td>${data[i].PropertyType}</td>
+                <td>${data[i].Bedrooms}</td>
+                <td>${data[i].Furniture}</td>
+                <td>${data[i].Price}</td>
+                <td>${data[i].UnitNumber}</td>
+                <td>${data[i].Status}</td>
+                <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
+            </tr>        
+            `
+        }}
 
     document.getElementById('tbody').innerHTML = someColumns;
 
-
-
-    document.getElementById('IDSearchInput').addEventListener('keyup', function() {
-        searchData()
-        // const dataDiv = document.getElementById('IDNewDataDiv')
-        // dataDiv.remove();
-        // if (dataDiv) {
-        //     dataDiv.remove();
-        // } else {
-        //     searchData()
-        // }
-    })
-
 }
+
+
+// document.getElementById('IDSearchInput').addEventListener('keyup', function() {
+//     searchData()
+
+// })
+
+
+
 // searchData()
 // window.searchData = searchData
 
