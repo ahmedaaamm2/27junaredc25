@@ -42,34 +42,6 @@ export function closeDataDiv(){
 }
 
 
-// export function adddataButton(){
-//     const btn = document.createElement('button');
-//     btn.id = 'idcollectData'
-//     btn.textContent = 'Add'  /////////////////////////////////////////////// (   Add Button  )
-//     btn.style.height = '30px'
-//     btn.style.width = '15%'
-//     btn.style.backgroundColor = 'silver'
-//     btn.style.margin = 'auto'
-//     btn.style.borderRadius = '10px'
-//     btn.style.fontSize = '12px'
-//     document.getElementById('head2Div').append(btn)
-
-//     btn.addEventListener('click', () => {
-//     const dataDiv = document.getElementById('IDNewDataDiv')
-//     if (dataDiv) {
-//         dataDiv.remove();
-//     } else {
-//         collectDataContainer()
-//         closeDataDiv()
-//     }
-
-//     });
-
-    
-// }
-
-
-
 export function collectDataContainer(){
     NewDataDivFnc()
 
