@@ -24,13 +24,13 @@ export function searchDivFnc(){
     document.getElementById('IDSearchInput').addEventListener('keyup', function() {
         
     const dataDiv = document.getElementById('IDNewDataDiv')
-    if (dataDiv) {
-        dataDiv.remove();
-    } else {
-        searchData(this.value)
-        colorizeTable
+        if (dataDiv) {
+            dataDiv.remove();
+        } else {
+            searchData(this.value)
+            colorizeTable()
 
-    }
+        }
 
     })
 

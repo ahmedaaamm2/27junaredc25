@@ -2,30 +2,32 @@ import { NewDataDivFnc } from '/js/adddata.js';
 import { data } from './database.js';
 
 // const dataDiv = document.getElementById('IDNewDataDiv')
+const detailsList = ['Booking Status','Agent','Booking Start','Booking End','Offer Price','View','Balcony', 'Pool', 'Gym', 'sauna', 'KidsArea', 'CheckOut Date','Maintainance Status','RFO Date','Remarks']
 
 export function getDetails(i){     
   if(document.contains(document.getElementById('IDNewDataDiv'))){   ///// prevent doublicate when details button is clicked
     document.getElementById('IDNewDataDiv').remove()}
+    
 
   let table = '';
 
   table = `
     <button id="idClose" > Close </button>
-    <button class='detailsButton'>${i}</button>
-    <button class='detailsButton'>${data[i].area}</button>
-    <button class='detailsButton'>${data[i].property}</button>
-    <button class='detailsButton'>${data[i].type}</button>
-    <button class='detailsButton'>${data[i].unit}</button>
-    <button class='detailsButton'>${data[i].beds}</button>
-    <button class='detailsButton'>${data[i].furniture}</button>
-    <button class='detailsButton'>${data[i].utilities}</button>
-    <button class='detailsButton'>${data[i].price}</button>
-    <button class='detailsButton'>${data[i].Status}</button>
-    <button class='detailsButton'>${data[i].Agent}</button>
-    <button class='detailsButton'>${data[i].Start}</button>
-    <button id='vedioButton' onclick='getVedio()' name='${data[i].vedio}' class='detailsButton'>${data[i].end}</button>
-    <button id='locationButton' onclick=getLocation()  name='${data[i].location}' class='detailsButton'>${data[i].time}</button>
-
+    <button class='detailsButton'> <span style="color: black;"> Status : </span> ${data[i].BookingStatus}</button>
+    <button class='detailsButton'><span style="color: black;"> Agent Name : </span> ${data[i].Agent}</button>
+    <button class='detailsButton'><span style="color: black;"> Booking Start : </span> ${data[i].BookingStart}</button>
+    <button class='detailsButton'><span style="color: black;"> Booking End </span> :${data[i].BookingEnd}</button>
+    <button class='detailsButton'><span style="color: black;"> Offer : </span> ${data[i].OfferPrice}</button>
+    <button class='detailsButton'><span style="color: black;"> View : </span> ${data[i].View}</button>
+    <button class='detailsButton'><span style="color: black;"> Balcony : </span> ${data[i].Balcony}</button>
+    <button class='detailsButton'><span style="color: black;"> Pool : </span> ${data[i].Pool}</button>
+    <button class='detailsButton'><span style="color: black;"> GYM : </span> ${data[i].Gym}</button> 
+    <button class='detailsButton'><span style="color: black;"> Suna : </span> ${data[i].Sauna}</button>
+    <button class='detailsButton'><span style="color: black;"> Kids Area : </span> ${data[i].kidsArea}</button>
+    <button class='detailsButton'><span style="color: black;"> CheckOut Date : </span> ${data[i].CheckOutDate}</button>
+    <button class='detailsButton'><span style="color: black;"> Maintainance : </span> ${data[i].MaintainanceStatus}</button>
+    <button class='detailsButton'><span style="color: black;"> Unit Ready By : </span> ${data[i].RFODate}</button>
+    <button class='detailsButton'><span style="color: black;"> Remarks : </span> ${data[i].Remarks}</button>
   `
 
       
@@ -47,16 +49,15 @@ export function getDetails(i){
 
 
   divInTwo.innerHTML = table;
+  getVedio(i)
+  getLocation(i)    
   document.getElementById('idClose').addEventListener('click', function() {dataDiv.remove()});
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////
   // adding vedio and location and disable clicking    
   /////////////////////////////////////////////////////////////////////////////////////////////////////
-  document.getElementById('vedioButton').click()
-  document.getElementById('vedioButton').click()
-  document.getElementById('locationButton').click()
-  document.getElementById('locationButton').click()
+
 
   document.getElementById('IDSearchInput').focus();
 
@@ -69,31 +70,30 @@ window.getDetails = getDetails
 
 
 
-export function getVedio(){
+export function getVedio(i){
+  console.log(i)
   const divInOne =  document.getElementById('iddivInOne')
 
   const iframe = document.createElement('iframe')
-  iframe.height = '430px';
+  iframe.height = '450px';
 
-  document.getElementById('vedioButton').addEventListener('click', function() {
-    iframe.src = this.name;
-    divInOne.append(iframe)
-  });
+  iframe.src = data[i].vedio;
+  divInOne.append(iframe)
+
 }
 window.getVedio = getVedio
 
 //////////////////////////////////////////////////////////////////////////
 
-export function getLocation(){
+export function getLocation(i){
   const divInThre =  document.getElementById('iddivInThree')
 
   const iframe = document.createElement('iframe')
-  iframe.height = '430px';
+  iframe.height = '450px';
 
-  document.getElementById('locationButton').addEventListener('click', function() {
-    iframe.src = this.name;
-    divInThre.append(iframe)
-  });
+  iframe.src = data[i].location;
+  divInThre.append(iframe)
+ 
 }
 window.getLocation = getLocation
 //////////////////////////////////////////////////////////////////////////

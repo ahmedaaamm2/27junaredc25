@@ -1,7 +1,7 @@
 import { data } from "./database.js";
 
 
-const aredcBookingShort = ['Num', 'Area', 'Property Name','Property Type','Bedrooms','Furniture','Price','Unit Number','Status','Details',]
+const aredcBookingShort = ['Num', 'Area', 'Property Name','Property Type','Bedrooms','Furniture','Price','Unit Number','Booking Status','Details']
 
 
 export function showData(){
@@ -42,7 +42,7 @@ export function showSpesific(){
             <td>${data[i].Furniture}</td>
             <td>${data[i].Price}</td>
             <td>${data[i].UnitNumber}</td>
-            <td>${data[i].Status}</td>
+            <td>${data[i].BookingStatus}</td>
             <td><button onclick="getDetails(${i})" id="idgetDetails">Details</button></td>
         </tr>        
         `
@@ -50,8 +50,6 @@ export function showSpesific(){
         }
         
     tbody.innerHTML = someColumns;
-
-
 
 }
 

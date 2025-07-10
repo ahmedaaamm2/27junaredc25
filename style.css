@@ -137,7 +137,8 @@ input:focus{
 
 .detailsDivs{
     display: flex;
-    height: fit-content;
+    /* flex: 1; */
+    height: 450px;
     width: 32%;
     flex-direction: column;
     gap: .2em;
