@@ -5,18 +5,21 @@ const collectedData = [];
 
 
 export function NewDataDivFnc(){
-
+    console.log(user)
     const NewDataDiv = document.createElement('div')
     NewDataDiv.id = 'IDNewDataDiv'
-    NewDataDiv.className = 'CLASSseacrhDiv'
-    NewDataDiv.style.height = '600px'
+    // NewDataDiv.className = 'CLASSseacrhDiv'
+    NewDataDiv.style.height = '560px'
     NewDataDiv.style.width = '100%'
     NewDataDiv.style.display = 'flex'
     NewDataDiv.style.flexDirection = 'column'
     NewDataDiv.style.justifyContent = 'center'
     NewDataDiv.style.alignItems = 'center '
     NewDataDiv.style.gap = '10px'
-    document.getElementById('IDseacrhDiv').after(NewDataDiv)
+    // NewDataDiv.style.backgroundColor = 'red'
+    // NewDataDiv.style.padding = '30px 0'
+
+    document.getElementById('IDheadDiv').after(NewDataDiv)
 
 }
 
@@ -188,8 +191,9 @@ export function pfTrigger(){
     const iframe = document.createElement('iframe')
     iframe.height = '100%';
     iframe.width = '100%';
+    // iframe.target="_blank"
+    // iframe.frameborder="0"
     iframe.src = 'https://www.propertyfinder.qa/en/agent/ahmed-abdelkader-2805';
-    // document.getElementById('IDNewDataDiv')
     dataDiv.append(iframe)
 
 }
