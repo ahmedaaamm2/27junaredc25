@@ -230,7 +230,7 @@ export function getDetails(i){
 
 
 
-  document.getElementById('IDSearchInput').focus();
+  // document.getElementById('bookBtn').select();
 
 
 }
